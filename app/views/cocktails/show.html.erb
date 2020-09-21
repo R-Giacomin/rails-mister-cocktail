@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <p>
+    <strong>Name:</strong>
+    <%= @cocktail.name %>
+  </p>
+
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Dose</th>
+        <th>Ingredient</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @cocktail.doses.each do |dose| %>
+        <tr>
+          <td><%= dose.description %></td>
+          <td><%= dose.ingredient.name %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to 'Back', cocktails_path, class: "btn btn-outline-secondary" %>
+  <%= link_to 'Add a dose', new_cocktail_dose_path(@cocktail), class: "btn btn-outline-secondary" %>
+</div>

@@ -1,0 +1,20 @@
+
+<div class="container">
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+    <div class="cards col-3 col-sm-3">
+        <div>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+          </div>
+            <h2> <%= cocktail.name %> </h2>
+            <% cocktail.doses.each do |dose| %>
+            <p id="ingredients">
+              <%= dose.ingredient.name %>
+            </p>
+          <% end %>
+          <%= link_to "Show", cocktail, class: "btn btn-outline-secondary" %>
+        </div>
+    </div>
+    <% end %>
+  </div>
+</div>
